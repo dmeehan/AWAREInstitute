@@ -1608,7 +1608,6 @@ body {
     margin: 0 auto;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
-    font-weight: bold;
     text-align: justify; } }
 
 /* ABOUT MODULE */
@@ -2010,5 +2009,31 @@ body {
       }
 
     } 
+
+    blockquote:before {
+      flex: none;
+      color: #ccc;
+      font-size: 4rem;
+      opacity: .5;
+      line-height: 1;
+      content: open-quote;
+      font-size: 8rem;
+  }
+
+  blockquote {
+    display: flex;
+    font-style: italic;
+    color: #555;
+    padding: 0;
+    line-height: 1.6;
+    margin: 0;
+    quotes: "\201C" "\201D";
+    padding: 0 1rem;
+}
+
+blockquote p {
+  padding: 2rem;
+  padding-bottom: 0;
+}
 
 /*# sourceMappingURL=about.css.map */
