@@ -1496,6 +1496,7 @@ body {
         color: #5E717D;
         display: inline-block;
         font-family: "Open Sans Condensed", Helvetica Neue Condensed, Helvetica, Arial, sans-serif;
+        font-weight: bold;
         text-transform: uppercase; }
         .module.navigation .navigation-menu li a:hover {
           color: #b0bcc4; }
