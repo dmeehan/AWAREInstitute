@@ -242,11 +242,14 @@ brighter, more sustainable future for animals in human care.</p>
     </aside>
     <div id="map-container"></div>
 </section>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+    // Initialize the map
     var map = L.map('map-container', {
-        center: [45.537327, -122.684843],
-        zoom: 13,
-        scrollWheelZoom: false,
+        center: [45.537327, -122.684843], // Set map center
+        zoom: 13, // Set initial zoom level
+        scrollWheelZoom: false, // Disable scrolling
         touchZoom: false,
         dragging: false,
         doubleClickZoom: false,
@@ -255,18 +258,19 @@ brighter, more sustainable future for animals in human care.</p>
         zoomControl: false
     });
 
-    // Prep the background tile layer
-    var tileUrl = 'https://api.mapbox.com/v1/light-v11/{z}/{x}/{y}.png';
+    // Correct Mapbox tile URL
+    var tileUrl = 'https://api.mapbox.com/styles/v1/mapbox/light-v11/tiles/512/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZG1lZWhhbiIsImEiOiJjbTY0YjkybTExNmh0MmtvcTZtbWtvOWduIn0.tB5FJjqoeJ2saMfodaCCgw';
 
+    // Attribution required by Mapbox
+    var tileAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                          '<a href="https://www.mapbox.com/">Mapbox</a>';
 
-    var tileAttribution = 'Data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, Design &copy; MapBox';
-
-    // Add the tile layer
-    var streets = L.tileLayer(tileUrl, {
-        attribution: tileAttribution,
+    // Add tiles to the map
+    L.tileLayer(tileUrl, {
+        attribution: tileAttribution
     }).addTo(map);
 
-    // add a marker in the given location, attach some popup content to it
+    // Add a marker to the map
     L.circleMarker([45.537327, -122.714843], {
         color: '#C9C5A2',
         fillColor: '#5E717D',
@@ -275,7 +279,8 @@ brighter, more sustainable future for animals in human care.</p>
         radius: 20,
         weight: 8
     }).addTo(map);
-
+</script>
+<script>
     $(function () {
         $('a[href*="#"]:not([href="#"])').click(function () {
             $('body').toggleClass('mobile-nav');
