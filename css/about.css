@@ -1968,7 +1968,10 @@ body {
         .module.contact .contact-wrapper .contact-info .contact-address h4 {
           margin-bottom: 0.75rem; }
   .module.contact .map-container {
-    height: 60em; }
+    height: 60em; 
+    width: 100%;
+    position: relative;
+  }
 
 
   /* service spotlight */
